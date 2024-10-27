@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "pkg:install": "cd server && pnpm i && cd ../addtocart && pnpm i && cd ../cart && pnpm i && cd ../home && pnpm i && cd ../pdp && pnpm i",
-    "dev": "concurrently \"cd server; pnpm start:dev\" \"cd addtocart; pnpm start:live\"  \"cd cart; pnpm start:live\"  \"cd home; pnpm start:live\"  \"cd pdp; pnpm start:live\""
-  },
+"scripts": {
+  "pkg:install": "pnpm --filter server add --prod && pnpm --filter addtocart add --prod && pnpm --filter cart add --prod && pnpm --filter home add --prod && pnpm --filter pdp add --prod",
+  "dev": "concurrently \"pnpm --filter server start:dev\" \"pnpm --filter addtocart start:live\" \"pnpm --filter cart start:live\" \"pnpm --filter home start:live\" \"pnpm --filter pdp start:live\""
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
